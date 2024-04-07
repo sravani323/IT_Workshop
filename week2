@@ -1,0 +1,111 @@
+                   *LAB2*
+   creating a grep file                
+ cat>grepfilter.txt
+welcome to ubuntu
+hii is linux/unix commands
+rgukt rajiv gandhi university konwledge technology
+
+
+              
+
+user@sravani:~$ grep "rgukt" grepfilter.txt
+rgukt rajiv gandhi university konwledge technology
+
+
+-v: This prints out all the lines that do not matches the pattern
+user@sravani:~$ grep -v "unix" grepfilter.txt
+welcome to ubuntu
+rgukt rajiv gandhi university konwledge technology
+
+
+
+-c: This prints only a count of the lines that match a pattern
+user@sravani:~$ grep -c "unix" grepfilter.txt
+1
+
+-o :Print only the matched parts of a matching line, with each such part on a
+separate output line.
+user@sravani:~$ grep -o "o" grepfilter.txt
+o
+o
+o
+o
+o
+o
+
+-v: This prints out all the lines that do not matches the pattern
+user@sravani:~$ grep -v "this" grepfilter.txt
+welcome to ubuntu
+hii is linux/unix commands
+rgukt rajiv gandhi university konwledge technology
+
+Creating a file
+user@sravani:~$ cat>monthfilter.txt
+august 
+september
+march
+june
+july
+Sorting them in a file
+-M: Sorts by month names.
+user@sravani:~$ sort -M monthfilter.txt
+march
+june
+july
+august
+september
+
+
+
+user@sravani:~$ cat>numberfilter.txt
+88 45 3 2 89
+
+-n: Sorts a file numerically (interprets data as numbers).
+user@sravani:~$ sort -n nufile1.txt
+01
+2
+3
+4
+5
+7
+9
+12
+23
+23
+
+
+
+Replacing the nth occurrence of a pattern in a line :
+user@sravani:~$ sed 's/rgukt/RGUKT/' grepfilter.txt
+welcome to ubuntu
+hii is linux/unix commands
+RGUKT rajiv gandhi university konwledge technology
+
+user@sravani:~$ sed 's/o/**/g' grepfilter.txt
+welc**me t** ubuntu
+hii is linux/unix c**mmands
+rgukt rajiv gandhi university k**nwledge techn**l**gy
+
+
+user@sravani:~$ cat>employee.txt
+venky storage id 7452
+vinay window id 7665
+mark unix id 7654
+john linux id 6564
+
+
+Print the lines which match the given pattern.
+user@sravani:~$ awk '{print $1,$3}' employee.txt
+venky id
+vinay id
+mark id
+john id
+
+
+user@sravani:~$ free m
+              total        used        free      shared  buff/cache   available
+Mem:        7913820     1050516     5802224      179080     1061080     6426184
+Swap:       2097148           0     2097148
+
+
+
